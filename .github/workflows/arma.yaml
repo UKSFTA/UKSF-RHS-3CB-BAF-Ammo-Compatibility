@@ -30,8 +30,15 @@ jobs:
       uses: actions/checkout@v4
     - name: Setup HEMTT
       uses: arma-actions/hemtt@v1
+      with:
+        annotate: false
     - name: Run HEMTT build
-      run: |
-          sudo apt-get update
-          sudo apt-get install -y wine64          
-          hemtt build
+      run: hemtt build
+    - name: Rename build folder
+      run: mv .hemttout/build .hemttout/@uksfta
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: uksfta-${{ github.sha }}-nobin
+        path: .hemttout/@*
+        include-hidden-files: true # Because .hemttout is a hidden directory
