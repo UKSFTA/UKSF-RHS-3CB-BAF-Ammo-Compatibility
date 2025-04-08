@@ -1,0 +1,11 @@
+name = "UKSF-RHS-3CB-BAF-Ammo-Compatibility"
+author = "lErrorl404l"
+prefix = "TFA"
+mainprefix = "z"
+
+[version]
+major = 0
+minor = 1
+patch = 0
+build = 0
+git_hash = 0
