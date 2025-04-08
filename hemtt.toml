@@ -1,0 +1,23 @@
+name = "UKSF-RHS-3CB-BAF-Ammo-Compatibility"
+author = "lErrorl404l"
+prefix = "UKSFTA"
+
+files = [
+    "*.dll",
+    "*.so",
+    "AUTHORS.txt",
+    "LICENSE",
+    "meta.cpp",
+    "mod.cpp",
+    "README.md",
+]
+
+keyname = "{{prefix}}_{{version}}"
+signame = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip UKSFTA_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]
+
+[header_exts]
+version= "{{git \"id 8\"}}"
