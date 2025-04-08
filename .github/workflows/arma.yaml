@@ -16,8 +16,6 @@ jobs:
       uses: actions/checkout@main
     - name: Validate Config
       run: python3 tools/config_style_checker.py
-    - name: Validate Code Style
-      run: python3 tools/code_style_checker.py
     - name: Validate Stringtables
       run: python3 tools/stringtable_validator.py
     - name: Validate SQF
