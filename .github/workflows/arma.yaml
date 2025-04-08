@@ -23,15 +23,15 @@ jobs:
     - name: Validate Return Types
       run: python3 tools/return_checker.py
 
-    build-linux:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Checkout the source code
-        uses: actions/checkout@v4
-      - name: Setup HEMTT
-        uses: arma-actions/hemtt@v1
-      - name: Run HEMTT build
-        run: |
-            sudo apt-get update
-            sudo apt-get install -y wine64          
-            hemtt build
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the source code
+      uses: actions/checkout@v4
+    - name: Setup HEMTT
+      uses: arma-actions/hemtt@v1
+    - name: Run HEMTT build
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y wine64          
+          hemtt build
